@@ -1,6 +1,6 @@
 #define BLYNK_TEMPLATE_ID "TMPL618UL4x0n"
 #define BLYNK_TEMPLATE_NAME "CPC357 Air Quality Monitor"
-#define BLYNK_AUTH_TOKEN "iBhc_meG3wpUodE4PJfTrF_aOLWUmE8R"
+#define BLYNK_AUTH_TOKEN "YOUR_BLYNK_TOKEN"
 
 // Blynk cloud credentials/config.
 // Tip: avoid committing auth tokens and Wi-Fi passwords to public repos.
@@ -16,8 +16,8 @@
 // - DHT11 for temperature/humidity
 // - MQ-2 analog output (via ADC) for gas/smoke indication
 
-char ssid[] = "Dadike";
-char pass[] = "Lzcmsmde0987";
+char ssid[] = "YOUR_WIFI";
+char pass[] = "YOUR_PASSWORD";
 
 // Wi-Fi network credentials (2.4 GHz typically required for ESP32).
 
@@ -47,7 +47,7 @@ int setpointOn = 70;       // V7 (gas_index >= setpointOn -> ON)
 int setpointOff = 50;      // hysteresis OFF threshold (can be derived)
 
 // delay to turn off after good air
-const unsigned long FAN_OFF_DELAY_MS = 20000; // 2 min
+const unsigned long FAN_OFF_DELAY_MS = 20000; // 20 seconds
 // NOTE: 20000 ms = 20 seconds. Increase this value if you want ~2 minutes.
 unsigned long goodSinceMs = 0;
 
@@ -241,3 +241,4 @@ void loop() {
   Blynk.run();
   timer.run();
 }
+
