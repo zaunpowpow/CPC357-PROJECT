@@ -3,7 +3,7 @@
 A simple IoT air-quality monitoring and ventilation demo for **CPC357 – IoT Architecture and Smart Applications (SDG 11: Sustainable Cities & Communities)**.
 
 This project measures:
-- **Gas concentration (MQ2)** → `gas_raw` + normalized `gas_index`
+- **Air quality valye (MQ2 gas sensor)** → `gas_raw` + normalized `gas_index`
 - **Temperature & humidity (DHT11)** → `temp_c`, `hum_pct`
 
 It visualizes all data in **Blynk IoT mobile dashboard** and controls a **fan via relay** using:
@@ -41,6 +41,8 @@ Create a Blynk Template in **Blynk.Console** and add these Datastreams:
 | hum_pct | V3 | Double | 0–100 | DHT11 humidity (%) |
 | fan_state | V4 | Integer | 0–1 | Actual relay/fan state (device output) |
 | fan_manual | V5 | Integer | 0–1 | Manual fan switch (app input) |
+| auto_mode | V6 | Integer | 0-1 | Manual(0) mode |
+| gas_setpoint | V7 | Integer | 0-100 | Threshold for auto fan control |
 
 **Dashboard widgets (recommended):**
 - Gauge/Value: `hum_pct (V3)`, `temp_c (V2)`, `gas_index (V1)`, `gas_raw (V0)`
@@ -152,4 +154,5 @@ If ESP32 resets when motor starts:
 
 ## 8. License
 For academic use (CPC357 course project).  
+
 Third-party libraries follow their own licenses.
